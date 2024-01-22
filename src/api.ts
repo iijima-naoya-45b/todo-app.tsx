@@ -24,3 +24,13 @@ export const createTodo = async (todoData: any) => {
     }
 };
 
+//update関数
+export const updateTodo =async (todoId: number, toDodata: any) => {
+    try {
+        const responce = await axios.put(`${API_BASE_URL}/todos/${todoId}`, toDodata);
+        return responce.data;
+    }   catch (error) {
+        console.error('Error while updating todo:', error)
+        throw error;
+    }
+}

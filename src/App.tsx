@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import { getTodos } from './api';
 import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
 type Todo = {
   id: number;
   title: string;
   description: string;
-  completed: string;
+  completed: boolean;
 };
 
 const App = () => {
@@ -27,14 +28,10 @@ const App = () => {
 }, []);
 
 return (
-  <div className="container">
-    <h1>ToDo list</h1>
+  <div>
+    <h1>Todo App</h1>
     <TodoForm />
-    <ul>
-      {todos.map((todo: Todo) => (
-        <li key={todo.id}>{todo.title}</li>
-      ))}
-    </ul>
+    <TodoList todos={todos} />
   </div>
   );
 };
