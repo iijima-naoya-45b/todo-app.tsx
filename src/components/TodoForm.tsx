@@ -23,7 +23,7 @@ const TodoForm = () => {
             <h2>Create New ToDo</h2>
             <div>
                 <label>
-                    Title;
+                    Title
                     <input
                         type="text"
                         value={title}
