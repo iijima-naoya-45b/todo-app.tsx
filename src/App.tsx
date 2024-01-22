@@ -27,11 +27,20 @@ const App = () => {
   fetchTodos();
 }, []);
 
+//削除の表示
+const handleTodoDelete = async (todoId: number) => {
+  try {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 return (
   <div>
     <h1>Todo App</h1>
     <TodoForm />
-    <TodoList todos={todos} />
+    <TodoList todos={todos} onTodoDelete={handleTodoDelete} />
   </div>
   );
 };
