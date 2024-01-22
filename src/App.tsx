@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import { getTodos } from './api';
+import TodoForm from './components/TodoForm';
 
 type Todo = {
   id: number;
@@ -28,8 +29,9 @@ const App = () => {
 return (
   <div className="container">
     <h1>ToDo list</h1>
+    <TodoForm />
     <ul>
-      {todos.map((todo: any) => (
+      {todos.map((todo: Todo) => (
         <li key={todo.id}>{todo.title}</li>
       ))}
     </ul>

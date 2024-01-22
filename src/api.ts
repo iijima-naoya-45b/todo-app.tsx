@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:3000';
 
+// index関数
 export const getTodos = async () => {
     try {
         const responce = await axios.get(`${API_BASE_URL}/todos`);
@@ -12,6 +13,7 @@ export const getTodos = async () => {
     }
 };
 
+// create関数
 export const createTodo = async (todoData: any) => {
     try {
         const response = await axios.post(`${API_BASE_URL}/todos`,todoData);
@@ -21,3 +23,4 @@ export const createTodo = async (todoData: any) => {
         throw error;
     }
 };
+
